@@ -211,7 +211,7 @@ impl_int_readable!(i8, i16, i32, i64, i128, isize);
 
 impl Readable for f32 {
     fn read<R: Read, I: InputSource<R>>(source: &mut I) -> Self {
-        str::from_utf8(source.next_token_unwrap())
+        std::str::from_utf8(source.next_token_unwrap())
             .expect("invalid float while reading")
             .parse()
             .expect("invalid float while reading")
@@ -220,15 +220,17 @@ impl Readable for f32 {
 
 impl Readable for f64 {
     fn read<R: Read, I: InputSource<R>>(source: &mut I) -> Self {
-        str::parse(str::from_utf8(source.next_token_unwrap()).expect("invalid float while reading"))
-            .expect("invalid float while reading")
+        str::parse(
+            std::str::from_utf8(source.next_token_unwrap()).expect("invalid float while reading"),
+        )
+        .expect("invalid float while reading")
     }
 }
 
 impl Readable for String {
     fn read<R: Read, I: InputSource<R>>(source: &mut I) -> Self {
         let token = source.next_token_unwrap();
-        str::from_utf8(token)
+        std::str::from_utf8(token)
             .expect("invalid utf8 string")
             .to_owned()
     }

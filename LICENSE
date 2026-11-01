@@ -175,9 +175,6 @@
 
    END OF TERMS AND CONDITIONS
 
-Copyright for original `input!` macro is held by Hideyuki Tanaka, 2019.  The
-original macro is licensed under BSD 3-clause license.
-
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 

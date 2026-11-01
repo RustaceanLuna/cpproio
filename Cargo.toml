@@ -5,5 +5,5 @@ edition = "2024"
 description = "A library for IO in competitive programming"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/SuhaoCoding/cpproio"
+repository = "https://github.com/RustaceanLuna/cpproio"
 keywords = ["cp", "macro", "parsing", "io"]
